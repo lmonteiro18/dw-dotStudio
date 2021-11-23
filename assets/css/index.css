@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+.image-carousel {
+    align-items: center;
+    background-color: rgba(200, 200, 200, 0.15);
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.image-carousel-img {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+#Projetos {
+    position: relative;
+}
+
+.projetos-titulo {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 475px 0 0 0;
+}
+
+.projetos-titulo h1 {
+    color: white;
+    font-size: 3.25rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+.seta_irProjetos {
+    cursor: pointer;
+    float: right;
+    height: auto;
+    opacity: 50%;
+    transition: all .25s;
+    width: 11.5%;
+}
+
+.seta_irProjetos:hover {
+    opacity: 100%;
+}
+
+#Filtros {
+    background-color: black;
+    color: white;
+    display: block;
+    float: left;
+    margin: 75px 0 30px 0;
+    padding-top: 30px;
+    position: sticky;
+    top: -1px;
+    width: 100%;
+    z-index: 15;
+}
+
+#Filtros > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+}
+
+.filtro {
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 50px;
+    transition: color .25s;
+}
+
+.filtro:last-child {
+    opacity: 50%;
+    margin-right: 0;
+    transition: opacity .25s;
+}
+
+.filtro:first-child:hover {
+    color: #E111A7;
+}
+
+.filtro:nth-child(2):hover {
+    color: #00FFFF;
+}
+
+.filtro:nth-child(3):hover {
+    color: #B4FF00;
+}
+
+.filtro:nth-child(4):hover {
+    color: #0000FF;
+}
+
+.filtro:last-child:hover {
+    opacity: 100%;
+}
+
+#FiltrosOrdenacaoMobile {
+    display: none;
+}
+
+#Ordenacao {
+    color: white;
+    float: right;
+    margin: 0;
+    position: sticky;
+    right: 0;
+    top: 30px;
+    width: 75px;
+    z-index: 16;
+}
+
+#animacaoOrdenacaoAlfabetica, #animacaoOrdenacaoTemporal {
+    height: auto;
+    margin: auto;
+    overflow: visible;
+    width: 30%;
+}
+
+.ordenacao-alfabetica {
+    display: inline-block;
+    height: 100%;
+    margin: 0 0 25px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.ordenacao-alfabetica p:first-child, .ordenacao-temporal p:first-child {
+    margin: 0 0 10px 0;
+}
+
+.ordenacao-alfabetica p:last-child, .ordenacao-temporal p:last-child {
+    margin: 10px 0 0 0;
+}
+
+.ordenacao-temporal {
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+#Pesquisa {
+    bottom: -175px;
+    margin: 70px 0 0 0;
+    position: absolute;
+    right: 0;
+    width: 200px;
+}
+
+#BarraPesquisa {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: all .5s;
+    width: 100vw;
+    height: 100vh;
+}
+
+#BarraPesquisa i {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-right: 20px;
+    transition: all 4s ease;
+}
+
+#BarraPesquisa p {
+    border-bottom: 3px solid white;
+    font-size: 2rem;
+    height: 75px;
+    margin-top: 40px;
+    width: 70%;
+}
+
+#listaProjetos {
+    height: auto;
+    /* overflow-y: scroll; */
+    width: 100%;
+}
+
+.projeto {
+    color: white;
+    margin-bottom: 50px;
+    padding-left: 0;
+    position: relative;
+}
+
+.projeto a {
+    color: white;
+    cursor: pointer;
+    height: 100%;
+    text-decoration: none;
+    width: 100%;
+}
+
+.projeto .thumbnail:hover .thumbnailImgOverlay {
+    opacity: 100%;
+}
+
+.thumbnail__img {
+    position: relative;
+}
+
+.thumbnail__img > img {
+    height: auto;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.thumbnailImgOverlay {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 15px);
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: opacity .5s ease;
+    width: 100%;
+    z-index: 10;
+}
+
+.thumbnailImgOverlay p {
+    margin: 0;
+}
+
+.thumbnailImgOverlay b {
+    font-weight: 500;
+}
+
+.thumbnail_title b {
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .image-carousel {
+        height: 60vh;
+        z-index: -10;
+    }
+
+    .image-carousel-img {
+        height: auto;
+        width: 100%;
+    }
+
+    .projetos-titulo {
+        display: flex;
+        justify-content: space-between;
+        margin: 80vh 0 0 0;
+    }
+
+    .projetos-titulo h1 {
+        font-size: 2rem;
+    }
+
+    .seta_irProjetos {
+        width: 20%;
+    }
+
+    .seta_irProjetos:hover {
+        opacity: 50%;
+    }
+
+    .seta_irProjetos:active {
+        opacity: 100%;
+    }
+
+    #Filtros, #Ordenacao {
+        display: none;
+    }
+
+    .filtro:first-child:hover, .filtro:nth-child(2):hover, .filtro:nth-child(3):hover, .filtro:nth-child(4):hover {
+        color: white;
+    }
+
+    .filtro:last-child:hover{
+        opacity: 50%;
+    }
+
+    .filtro:first-child:active {
+        color: #E111A7;
+    }
+
+    .filtro:nth-child(2):active {
+        color: #00FFFF;
+    }
+
+    .filtro:nth-child(3):active {
+        color: #B4FF00;
+    }
+
+    .filtro:nth-child(4):active {
+        color: #0000FF;
+    }
+
+    .filtro:last-child:active {
+        opacity: 100%;
+    }
+
+    #FiltrosOrdenacaoMobile {
+        color: white;
+        display: block;
+        margin-top: 20px;
+    }
+
+    #DivBotoesFiltragemMobile {
+        display: block;
+    }
+
+    #DivBotoesFiltragemMobile > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 0.9rem;
+        list-style: none;
+    }
+
+    .botao-filtrar-mobile {
+        cursor: pointer;
+        z-index: 50;
+    }
+
+    .esconder-botao-filtrar-mobile {
+        z-index: 30;
+    }
+
+    .FiltrosMobile, .OrdenacaoMobile {
+        align-items: center;
+        background-color: black;
+        color: white;
+        display: none;
+        flex-direction: row;
+        height: 100vh;
+        left: 0;
+        opacity: 0;
+        padding-left: 15px;
+        position: fixed;
+        text-align: left;
+        top: 0;
+        transition: opacity .5s ease;
+        width: 100%;
+        z-index: 40;
+    }
+
+    .showFiltros {
+        display: flex;
+    }
+
+    .changeOpacity {
+        opacity: 100%;
+        transition: opacity .5s ease;
+    }
+
+    .FiltrosMobile ul, .OrdenacaoMobile ul {
+        font-size: 1.4rem;
+        list-style: none;
+        padding: 0;
+    }
+
+    .filtro-mobile, .ordenacao-mobile {
+        margin-bottom: 15px;
+    }
+
+    .ordenacao-mobile {
+        cursor: pointer;
+        transition: color .5s;
+    }
+
+    .ordenacao-mobile:first-child:active {
+        color: #E111A7;
+    }
+
+    .ordenacao-mobile:nth-child(2):active {
+        color: #00FFFF;
+    }
+
+    .ordenacao-mobile:nth-child(3):active {
+        color: #B4FF00;
+    }
+
+    .ordenacao-mobile:last-child:active {
+        color: #0000FF;
+    }
+
+    #PesquisaMobile {
+        bottom: -175px;
+        display: none;
+        margin: 70px 0 0 0;
+        position: absolute;
+        right: 0;
+        width: 200px;
+    }
+
+    #BarraPesquisaMobile {
+        align-items: center;
+        background: rgba(0, 0, 0, 0.75);
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        transition: all .5s;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #BarraPesquisaMobile i {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-right: 20px;
+        transition: all 4s ease;
+    }
+
+    #BarraPesquisaMobile p {
+        border-bottom: 3px solid white;
+        font-size: 2rem;
+        height: 75px;
+        margin-top: 40px;
+        width: 70%;
+    }
+
+    .projeto {
+        padding-right: 0;
+    }
+
+    .thumbnail_title {
+        padding: 0 15px 0 15px;
+    }
+}
